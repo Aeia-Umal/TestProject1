@@ -46,7 +46,7 @@ class CreateTimerViewController: UIViewController {
     }
     
     @IBAction func didTapSecondBTN(_ sender: UIButton) {
-        // SecondBTN = start/pause/resume button
+        timePickerVC.startTimer()
     }
     
     @IBAction func didTapThirdBTN(_ sender: UIButton) {
