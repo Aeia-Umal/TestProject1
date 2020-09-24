@@ -13,9 +13,8 @@
 		A0E0906F2519DBAB00366482 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E0906D2519DBAB00366482 /* Main.storyboard */; };
 		A0E090712519DBAE00366482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E090702519DBAE00366482 /* Assets.xcassets */; };
 		A0E090742519DBAE00366482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E090722519DBAE00366482 /* LaunchScreen.storyboard */; };
-		A0E0907D2519DDAF00366482 /* TimerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0907C2519DDAF00366482 /* TimerPickerViewController.swift */; };
+		A0E0907D2519DDAF00366482 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0907C2519DDAF00366482 /* ProgressViewController.swift */; };
 		A0E0907F2519DE2A00366482 /* CreateTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0907E2519DE2A00366482 /* CreateTimerViewController.swift */; };
-		A0E090812519DE6500366482 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E090802519DE6500366482 /* CountdownViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +26,8 @@
 		A0E090702519DBAE00366482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0E090732519DBAE00366482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0E090752519DBAE00366482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0E0907C2519DDAF00366482 /* TimerPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerViewController.swift; sourceTree = "<group>"; };
+		A0E0907C2519DDAF00366482 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		A0E0907E2519DE2A00366482 /* CreateTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerViewController.swift; sourceTree = "<group>"; };
-		A0E090802519DE6500366482 /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +76,7 @@
 			children = (
 				A0E0906B2519DBAB00366482 /* ViewController.swift */,
 				A0E0907E2519DE2A00366482 /* CreateTimerViewController.swift */,
-				A0E0907C2519DDAF00366482 /* TimerPickerViewController.swift */,
-				A0E090802519DE6500366482 /* CountdownViewController.swift */,
+				A0E0907C2519DDAF00366482 /* ProgressViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,8 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0E090812519DE6500366482 /* CountdownViewController.swift in Sources */,
-				A0E0907D2519DDAF00366482 /* TimerPickerViewController.swift in Sources */,
+				A0E0907D2519DDAF00366482 /* ProgressViewController.swift in Sources */,
 				A0E0907F2519DE2A00366482 /* CreateTimerViewController.swift in Sources */,
 				A0E0906C2519DBAB00366482 /* ViewController.swift in Sources */,
 				A0E090682519DBAB00366482 /* AppDelegate.swift in Sources */,

@@ -25,7 +25,8 @@
                                 <rect key="frame" x="157" y="473" width="101" height="30"/>
                                 <state key="normal" title="Set New Timer"/>
                                 <connections>
-                                    <segue destination="bJL-UZ-EwJ" kind="show" identifier="goToCreateTimerViewController" id="bFx-JZ-Q6G"/>
+                                    <action selector="createTimerBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bv-pI-eg6"/>
+                                    <segue destination="bJL-UZ-EwJ" kind="show" identifier="goToCreateTimerViewController" id="86p-bF-e0E"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,76 +57,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ga-PY-28h">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="y33-oF-NdV"/>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPR-VB-UE2">
-                                <rect key="frame" x="40" y="523" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPR-VB-UE2">
+                                <rect key="frame" x="40" y="523" width="58" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="didTapFirstBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="MUz-mu-9H2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL5-51-g5t">
-                                <rect key="frame" x="184" y="523" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL5-51-g5t">
+                                <rect key="frame" x="196" y="523" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="didTapSecondBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="XL2-VC-Lj6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnv-Eb-wZU">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnv-Eb-wZU">
                                 <rect key="frame" x="328" y="523" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didTapThirdBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="hy7-mv-oj2"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ma7-Ow-79L">
-                                <rect key="frame" x="0.0" y="88" width="414" height="337"/>
-                                <connections>
-                                    <segue destination="hIr-x2-Ime" kind="embed" id="pph-Ds-vJv"/>
-                                </connections>
-                            </containerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp2-3F-apz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="318"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4ga-PY-28h" firstAttribute="top" secondItem="oV3-le-tJd" secondAttribute="top" constant="44" id="1hc-UB-YHi"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="ma7-Ow-79L" secondAttribute="bottom" constant="437" id="3Os-hQ-6la"/>
-                            <constraint firstItem="ma7-Ow-79L" firstAttribute="top" secondItem="4ga-PY-28h" secondAttribute="bottom" id="3o7-pe-mlE"/>
-                            <constraint firstItem="PPR-VB-UE2" firstAttribute="top" secondItem="ma7-Ow-79L" secondAttribute="bottom" constant="98" id="4ZN-c9-5eS"/>
-                            <constraint firstItem="ma7-Ow-79L" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" id="A5u-Rm-DmZ"/>
-                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="leading" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="98" id="Awl-h8-7zh"/>
-                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="PPR-VB-UE2" secondAttribute="trailing" constant="98" id="BOq-mE-zci"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="OL5-51-g5t" secondAttribute="bottom" constant="309" id="Cg7-Uo-Pfa"/>
-                            <constraint firstItem="ma7-Ow-79L" firstAttribute="trailing" secondItem="4my-GX-eSl" secondAttribute="trailing" id="LY1-XB-WEo"/>
-                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="top" secondItem="ma7-Ow-79L" secondAttribute="bottom" constant="98" id="Ot4-In-bcJ"/>
-                            <constraint firstItem="4ga-PY-28h" firstAttribute="leading" secondItem="oV3-le-tJd" secondAttribute="leading" id="RfU-I0-ogC"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="PPR-VB-UE2" secondAttribute="bottom" constant="309" id="aKd-Ar-3ga"/>
-                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="PPR-VB-UE2" secondAttribute="trailing" constant="98" id="cLn-4d-8VZ"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="trailing" secondItem="Mnv-Eb-wZU" secondAttribute="trailing" constant="40" id="hgb-hi-mgI"/>
-                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="leading" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="98" id="j2S-dZ-owY"/>
-                            <constraint firstAttribute="trailing" secondItem="4ga-PY-28h" secondAttribute="trailing" id="oMU-tw-L5s"/>
-                            <constraint firstItem="OL5-51-g5t" firstAttribute="top" secondItem="ma7-Ow-79L" secondAttribute="bottom" constant="98" id="qi3-D1-fKg"/>
-                            <constraint firstItem="PPR-VB-UE2" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" constant="40" id="tLc-fh-sMW"/>
-                            <constraint firstItem="ma7-Ow-79L" firstAttribute="top" secondItem="4ga-PY-28h" secondAttribute="bottom" id="uDM-TQ-CkP"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="Mnv-Eb-wZU" secondAttribute="bottom" constant="309" id="z0q-gZ-rio"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="trailing" secondItem="Mnv-Eb-wZU" secondAttribute="trailing" constant="40" id="02d-FU-8lS"/>
+                            <constraint firstItem="PPR-VB-UE2" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" constant="40" id="1al-hj-Nzt"/>
+                            <constraint firstItem="OL5-51-g5t" firstAttribute="top" secondItem="oV3-le-tJd" secondAttribute="topMargin" constant="435" id="2iD-Al-8O5"/>
+                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="PPR-VB-UE2" secondAttribute="trailing" constant="98" id="5wc-Qx-kY9"/>
+                            <constraint firstItem="Jp2-3F-apz" firstAttribute="top" secondItem="4my-GX-eSl" secondAttribute="top" id="Cb2-s1-lws"/>
+                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="leading" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="98" id="GbI-QK-OEa"/>
+                            <constraint firstAttribute="bottom" secondItem="Jp2-3F-apz" secondAttribute="bottom" constant="490" id="JMb-7b-XKt"/>
+                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="leading" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="98" id="PSa-mq-cYf"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="OL5-51-g5t" secondAttribute="bottom" constant="309" id="SLA-NZ-3QB"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="Mnv-Eb-wZU" secondAttribute="bottom" constant="309" id="Tid-Ox-ieZ"/>
+                            <constraint firstItem="PPR-VB-UE2" firstAttribute="top" secondItem="oV3-le-tJd" secondAttribute="topMargin" constant="435" id="apl-UX-vCM"/>
+                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="PPR-VB-UE2" secondAttribute="trailing" constant="98" id="byq-Jt-hYu"/>
+                            <constraint firstItem="Jp2-3F-apz" firstAttribute="trailing" secondItem="4my-GX-eSl" secondAttribute="trailing" id="dSv-fk-KyQ"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="PPR-VB-UE2" secondAttribute="bottom" constant="309" id="meb-mE-Uno"/>
+                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="top" secondItem="oV3-le-tJd" secondAttribute="topMargin" constant="435" id="w3Z-G1-zhf"/>
+                            <constraint firstItem="Jp2-3F-apz" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" id="ybp-ak-oK7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4my-GX-eSl"/>
                     </view>
                     <navigationItem key="navigationItem" id="UF6-96-R2A"/>
                     <connections>
-                        <outlet property="containerView" destination="ma7-Ow-79L" id="53V-Vy-IJQ"/>
                         <outlet property="firstBTN" destination="PPR-VB-UE2" id="tvV-df-KKg"/>
                         <outlet property="secondBTN" destination="OL5-51-g5t" id="AbO-Gv-i1X"/>
                         <outlet property="thirdBTN" destination="Mnv-Eb-wZU" id="9qK-Mj-5EP"/>
+                        <outlet property="timePickerView" destination="Jp2-3F-apz" id="cof-u6-0Q7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJf-98-nRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1782.608695652174" y="101.78571428571428"/>
+        </scene>
+        <!--Progress View Controller-->
+        <scene sceneID="f9o-wj-7Wz">
+            <objects>
+                <viewController id="pux-ui-YNl" customClass="ProgressViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iye-Pi-8uK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0eE-fp-bvs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmb-l9-QOK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2515" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ctM-AO-u59">
@@ -144,30 +147,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e44-O9-uCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
-        </scene>
-        <!--Timer Picker View Controller-->
-        <scene sceneID="dBL-D8-vC3">
-            <objects>
-                <viewController id="hIr-x2-Ime" customClass="TimerPickerViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yRm-j6-KND">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="337"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jp2-3F-apz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="337"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="G7U-4A-dtn"/>
-                    </view>
-                    <connections>
-                        <outlet property="timePickerView" destination="Jp2-3F-apz" id="Ae8-I1-S1Q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3d2-FT-cXo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2618.840579710145" y="45.870535714285715"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sKH-ru-t9m">
