@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" title="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,65 +49,77 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="100.44642857142857"/>
         </scene>
-        <!--Create Timer View Controller-->
+        <!--CreateTimerViewController-->
         <scene sceneID="Umw-NF-gZu">
             <objects>
-                <viewController id="bJL-UZ-EwJ" customClass="CreateTimerViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateTimerViewController" title="CreateTimerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bJL-UZ-EwJ" customClass="CreateTimerViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oV3-le-tJd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPR-VB-UE2">
-                                <rect key="frame" x="40" y="523" width="58" height="30"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="didTapFirstBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="MUz-mu-9H2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL5-51-g5t">
-                                <rect key="frame" x="196" y="523" width="34" height="30"/>
+                                <rect key="frame" x="180" y="523" width="54" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <action selector="didTapSecondBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="XL2-VC-Lj6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnv-Eb-wZU">
-                                <rect key="frame" x="328" y="523" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didTapThirdBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="hy7-mv-oj2"/>
+                                    <action selector="didTapStartPauseResumeBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="3MO-YD-yji"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp2-3F-apz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="318"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBr-Vn-bMV">
+                                <rect key="frame" x="59" y="523" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="didTapDoneBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="kgs-rw-Crr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bT0-vK-OVP">
+                                <rect key="frame" x="316" y="523" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="didTapResetBTN:" destination="bJL-UZ-EwJ" eventType="touchUpInside" id="YtE-jw-MMi"/>
+                                    <action selector="resetButtonPressed:" destination="pux-ui-YNl" eventType="touchUpInside" id="2ni-P5-WEQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ts-zp-zAv">
+                                <rect key="frame" x="93" y="723" width="228" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="trailing" secondItem="Mnv-Eb-wZU" secondAttribute="trailing" constant="40" id="02d-FU-8lS"/>
-                            <constraint firstItem="PPR-VB-UE2" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" constant="40" id="1al-hj-Nzt"/>
-                            <constraint firstItem="OL5-51-g5t" firstAttribute="top" secondItem="oV3-le-tJd" secondAttribute="topMargin" constant="435" id="2iD-Al-8O5"/>
-                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="PPR-VB-UE2" secondAttribute="trailing" constant="98" id="5wc-Qx-kY9"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="trailing" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="180" id="1HX-i5-Jjo"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="bT0-vK-OVP" secondAttribute="bottom" constant="309" id="1Iv-zX-gyB"/>
                             <constraint firstItem="Jp2-3F-apz" firstAttribute="top" secondItem="4my-GX-eSl" secondAttribute="top" id="Cb2-s1-lws"/>
-                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="leading" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="98" id="GbI-QK-OEa"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="trailing" secondItem="3Ts-zp-zAv" secondAttribute="trailing" constant="93" id="Db1-gM-aEd"/>
+                            <constraint firstItem="GBr-Vn-bMV" firstAttribute="top" secondItem="Jp2-3F-apz" secondAttribute="bottom" constant="117" id="DvZ-es-WkV"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="OL5-51-g5t" secondAttribute="bottom" constant="309" id="GPO-LE-R0K"/>
                             <constraint firstAttribute="bottom" secondItem="Jp2-3F-apz" secondAttribute="bottom" constant="490" id="JMb-7b-XKt"/>
-                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="leading" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="98" id="PSa-mq-cYf"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="OL5-51-g5t" secondAttribute="bottom" constant="309" id="SLA-NZ-3QB"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="Mnv-Eb-wZU" secondAttribute="bottom" constant="309" id="Tid-Ox-ieZ"/>
-                            <constraint firstItem="PPR-VB-UE2" firstAttribute="top" secondItem="oV3-le-tJd" secondAttribute="topMargin" constant="435" id="apl-UX-vCM"/>
-                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="PPR-VB-UE2" secondAttribute="trailing" constant="98" id="byq-Jt-hYu"/>
+                            <constraint firstItem="3Ts-zp-zAv" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" constant="93" id="LqJ-hd-e3P"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="trailing" secondItem="bT0-vK-OVP" secondAttribute="trailing" constant="59" id="Ls2-JF-eJC"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="GBr-Vn-bMV" secondAttribute="bottom" constant="309" id="PHP-5r-FV9"/>
+                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="3Ts-zp-zAv" secondAttribute="bottom" constant="118" id="RH5-wO-lGJ"/>
+                            <constraint firstItem="3Ts-zp-zAv" firstAttribute="top" secondItem="OL5-51-g5t" secondAttribute="bottom" constant="170" id="SZw-NK-BGw"/>
+                            <constraint firstItem="bT0-vK-OVP" firstAttribute="leading" secondItem="OL5-51-g5t" secondAttribute="trailing" constant="82" id="X0e-2e-HQZ"/>
                             <constraint firstItem="Jp2-3F-apz" firstAttribute="trailing" secondItem="4my-GX-eSl" secondAttribute="trailing" id="dSv-fk-KyQ"/>
-                            <constraint firstItem="4my-GX-eSl" firstAttribute="bottom" secondItem="PPR-VB-UE2" secondAttribute="bottom" constant="309" id="meb-mE-Uno"/>
-                            <constraint firstItem="Mnv-Eb-wZU" firstAttribute="top" secondItem="oV3-le-tJd" secondAttribute="topMargin" constant="435" id="w3Z-G1-zhf"/>
+                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" constant="180" id="gpo-fc-kXc"/>
+                            <constraint firstItem="GBr-Vn-bMV" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" constant="59" id="ign-Mw-JIF"/>
+                            <constraint firstItem="OL5-51-g5t" firstAttribute="leading" secondItem="GBr-Vn-bMV" secondAttribute="trailing" constant="84" id="onX-ZJ-G2k"/>
+                            <constraint firstItem="bT0-vK-OVP" firstAttribute="top" secondItem="Jp2-3F-apz" secondAttribute="bottom" constant="117" id="pUT-Tb-IEr"/>
+                            <constraint firstItem="OL5-51-g5t" firstAttribute="top" secondItem="Jp2-3F-apz" secondAttribute="bottom" constant="117" id="qZD-u6-DOa"/>
                             <constraint firstItem="Jp2-3F-apz" firstAttribute="leading" secondItem="4my-GX-eSl" secondAttribute="leading" id="ybp-ak-oK7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4my-GX-eSl"/>
                     </view>
                     <navigationItem key="navigationItem" id="UF6-96-R2A"/>
                     <connections>
-                        <outlet property="firstBTN" destination="PPR-VB-UE2" id="tvV-df-KKg"/>
-                        <outlet property="secondBTN" destination="OL5-51-g5t" id="AbO-Gv-i1X"/>
-                        <outlet property="thirdBTN" destination="Mnv-Eb-wZU" id="9qK-Mj-5EP"/>
+                        <outlet property="countdownLabel" destination="3Ts-zp-zAv" id="CPT-QJ-Eec"/>
+                        <outlet property="doneBTN" destination="GBr-Vn-bMV" id="nHh-S0-dew"/>
+                        <outlet property="resetBTN" destination="bT0-vK-OVP" id="mlA-YV-Jqi"/>
+                        <outlet property="startPauseResumeBTN" destination="OL5-51-g5t" id="mje-N0-YTA"/>
                         <outlet property="timePickerView" destination="Jp2-3F-apz" id="cof-u6-0Q7"/>
                     </connections>
                 </viewController>
@@ -115,20 +127,49 @@
             </objects>
             <point key="canvasLocation" x="1782.608695652174" y="101.78571428571428"/>
         </scene>
-        <!--Progress View Controller-->
+        <!--Countdown Screen-->
         <scene sceneID="f9o-wj-7Wz">
             <objects>
-                <viewController id="pux-ui-YNl" customClass="ProgressViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iye-Pi-8uK">
+                <viewController storyboardIdentifier="CountdownViewController" title="Countdown Screen" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pux-ui-YNl" customClass="CountdownViewController" customModule="TestProject1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l2F-Cc-O7E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivj-74-hwc">
+                                <rect key="frame" x="20" y="146" width="374" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzn-6d-4Q3">
+                                <rect key="frame" x="67" y="508" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="pux-ui-YNl" eventType="touchUpInside" id="aDI-e5-EiB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-3k-pqt">
+                                <rect key="frame" x="307" y="508" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="pux-ui-YNl" eventType="touchUpInside" id="RsC-HE-uG0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="0eE-fp-bvs"/>
+                        <viewLayoutGuide key="safeArea" id="V0f-oi-WYP"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="countdownLabel" destination="ivj-74-hwc" id="WZH-Jl-DF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmb-l9-QOK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2515" y="108"/>
+            <point key="canvasLocation" x="2514.4927536231885" y="107.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ctM-AO-u59">

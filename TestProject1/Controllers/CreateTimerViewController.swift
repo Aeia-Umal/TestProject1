@@ -9,27 +9,20 @@
 import UIKit
 import Foundation
 
-protocol ProgressViewDelegate {
-    func didTapStartOrStopButton(hours: Int, minutes: Int, seconds: Int)
-}
-
 class CreateTimerViewController: UIViewController {
     
-    @IBOutlet weak var firstBTN: UIButton!
-    @IBOutlet weak var secondBTN: UIButton!
-    @IBOutlet weak var thirdBTN: UIButton!
+    @IBOutlet weak var doneBTN: UIButton!
+    @IBOutlet weak var startPauseResumeBTN: UIButton!
+    @IBOutlet weak var resetBTN: UIButton!
     
-    //button
+    @IBOutlet weak var countdownLabel: UILabel!
+    
     @IBOutlet weak var timePickerView: UIPickerView!
     
-    var timer = Timer()
-    
+    var secondsPassed = 0
     var duration = 0
     
-    var secondsPassed = 0
-    
-    var row = 0
-    var component = 0
+    var timer = Timer()
     
     let hoursRange = Array(1...24)
     let minutesRange = Array(1...60)
@@ -39,12 +32,17 @@ class CreateTimerViewController: UIViewController {
     var minutesValue = [0]
     var secondsValue = [0]
     
+    var hours = 0
+    var minutes = 0
+    var seconds = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timePickerView.delegate = self
         timePickerView.dataSource = self
+        
     }
+    
     
     //MARK: - Navigation
     
@@ -52,21 +50,21 @@ class CreateTimerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     
-    
-    @IBAction func didTapFirstBTN(_ sender: UIButton) {
-        // FirstBTN = done/cancel button
+    @IBAction func didTapDoneBTN(_ sender: UIButton) {
         cancelTimer()
     }
     
-    @IBAction func didTapSecondBTN(_ sender: UIButton) {
-        // SecondBTN = start/pause/resume button
+    @IBAction func didTapStartPauseResumeBTN(_ sender: UIButton) {
+        startTimer()
+        
+    }
+    
+    @IBAction func didTapResetBTN(_ sender: UIButton) {
         startTimer()
     }
     
-    @IBAction func didTapThirdBTN(_ sender: UIButton) {
-        // ThirdBTN = reset button
-    }
 }
+
 
 //MARK: - UIPickerViewMethods
 
@@ -156,40 +154,47 @@ extension CreateTimerViewController: UIPickerViewDataSource, UIPickerViewDelegat
         }
     }
     
-    //MARK: - Timer Methods
     
     func cancelTimer() {
         timer.invalidate()
         print("timer cancelled")
     }
     
-    
     func startTimer() {
         timer.invalidate()
-        secondsPassed = 0
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTimerDuration), userInfo: nil, repeats: true)
     }
     
     
-    @objc func setTimerDuration() {
+    func getDuration() -> Int {
+        hours = (hoursValue[0]) * 3600
+        minutes = (minutesValue[0]) * 60
+        seconds = (secondsValue[0])
         
-        let hours = (hoursValue[0]) * 3600
-        let minutes = (minutesValue[0]) * 60
-        let seconds = (secondsValue[0])
+        var duration = hours + minutes + seconds
         
-        let timerDuration = hours + minutes + seconds
+        return duration
         
-        duration = timerDuration
-        
-        print(secondsPassed)
-        
-        if secondsPassed < duration {
-            secondsPassed += 1
-        } else {
-            timer.invalidate()
-            print("done")
-        }
     }
+    
+    @objc func setTimerDuration() {
+    
+    duration = getDuration()
+    
+    if secondsPassed < duration {
+        secondsPassed += 1
+        
+        countdownLabel.text = String(duration - secondsPassed)
+        
+    } else {
+        
+        countdownLabel.text = "done!"
+        
+    }
+    
 }
 
+
+
+}

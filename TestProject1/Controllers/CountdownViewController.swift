@@ -7,15 +7,30 @@
 //
 
 import AVFoundation
-//import CircleProgressView
 import Foundation
 import UIKit
 
-class ProgressViewController: UIViewController {
+class CountdownViewController: UIViewController {
+    
+    
+    @IBOutlet weak var countdownLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
+    
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+        
+
+    }
+    
+    @IBAction func resetButtonPressed(_ sender: Any) {
+
+    }
+    
     
     //MARK: - Navigation
     
@@ -24,4 +39,20 @@ class ProgressViewController: UIViewController {
         //Get the new view controller using segue.destination.
         //Pass the selected object to the new view controller.
     }
-}
+    
+    
+    //MARK: - Timer Methods
+
+    
+    }
+    
+
+//extension CountdownViewController: CreateTimerVCDelegate {
+//    func giveDuration(_ duration: Int) {
+//
+//        }
+//    }
+//
+//
+
+
